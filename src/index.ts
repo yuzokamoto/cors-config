@@ -5,7 +5,7 @@ import cors from 'cors'
 dotenv.config()
 
 const corsConfig = {
-  origin: "https://puzzled-property.surge.sh",
+  origin: "https://wacky-rainstorm.surge.sh",
   optionsSuccessStatus: 200
 }
 
