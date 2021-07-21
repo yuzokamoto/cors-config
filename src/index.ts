@@ -1,14 +1,17 @@
 import express from 'express'
-import cors from 'cors'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config()
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.get("/", (req, res) => {
-  res.send("Servidor online.")
+  res.send({
+    result: "Servidor online!"
+  })
 })
 
 app.listen(process.env.PORT)
