@@ -9,19 +9,19 @@ const corsConfig = {
   optionsSuccessStatus: 200
 }
 
-var corsOptions = {
-  origin: 'http://example.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
 const app = express()
 app.use(express.json())
 app.use(cors(corsConfig))
 
 app.get("/", (req, res) => {
-  res.send({
-    result: "Servidor online!"
-  })
+  try {
+    res.send({
+      result: "Servidor online!"
+    })
+  } catch (error) {
+    console.log(error)
+    res.send({error})
+  }
 })
 
 app.listen(process.env.PORT)
